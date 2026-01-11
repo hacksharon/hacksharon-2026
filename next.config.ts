@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
         return [
             {
                 source: "/judging",
-                destination: "https://hacksharon-judging.vercel.app/judging*",
+                destination: "https://hacksharon-judging.vercel.app/judging",
             },
             {
                 source: "/judging/:path*",
