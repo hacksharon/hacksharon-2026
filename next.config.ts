@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
                 destination:
                     "https://hacksharon-judging.vercel.app/judging/:path*",
             },
+            {
+                source: "/register",
+                destination: "https://hacksharon-register.vercel.app/register",
+            },
+            {
+                source: "/register/:path*",
+                destination:
+                    "https://hacksharon-register.vercel.app/register/:path*",
+            },
         ];
     },
     /* config options here */
