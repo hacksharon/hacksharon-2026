@@ -33,14 +33,14 @@ body {
 
 /* Glass Utilities */
 .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
     border: 1px solid rgba(20, 57, 92, 0.1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .glass-nav {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
