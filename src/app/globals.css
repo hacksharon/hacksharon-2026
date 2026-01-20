@@ -3,13 +3,14 @@
 @theme {
     /* Link Next.js fonts to Tailwind classes */
     --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-    --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
+    --font-mono:
+        var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
     --font-display: var(--font-space), ui-sans-serif, system-ui, sans-serif;
 
     /* Your Brand Colors */
     --color-brand-teal: #2299b8;
     --color-brand-blue: #14395c;
-
+    --color-brand-teal-hover: #1a7a94;
     /* Animation Speeds (optional, v4 has good defaults) */
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -26,14 +27,15 @@ body {
     color: var(--foreground);
     background: var(--background);
     /* Technical Grid Pattern */
-    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    background-image:
+        linear-gradient(to right, #e2e8f0 1px, transparent 1px),
         linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
     background-size: 40px 40px;
 }
 
 /* Glass Utilities */
 .glass-card {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(34, 153, 184, 0.05);
     backdrop-filter: blur(2px);
     border: 1px solid rgba(20, 57, 92, 0.1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
