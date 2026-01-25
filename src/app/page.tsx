@@ -66,7 +66,7 @@ const Nav = () => (
                 </Link>
             </div>
             <Link
-                href="/register"
+                href="https://forms.gle/N5n6Pxi755HQ8DzRA"
                 className="py-3 px-7 rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/30 hover:scale-105 active:scale-95"
             >
                 Register
@@ -119,7 +119,7 @@ const Hero = () => (
                 className="flex flex-col sm:flex-row gap-4 justify-center"
             >
                 <Link
-                    href="/register"
+                    href="https://forms.gle/N5n6Pxi755HQ8DzRA"
                     className="h-12 px-8 rounded-lg bg-brand-teal text-white font-bold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 hover:-translate-y-1"
                 >
                     Register Now <ArrowRight size={18} />
