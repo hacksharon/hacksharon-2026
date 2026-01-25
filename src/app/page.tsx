@@ -66,7 +66,7 @@ const Nav = () => (
             </div>
             <Link
                 href="/register"
-                className="py-3 px-7 rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/50 hover:shadow-teal-500/60 hover:-translate-y-0.5"
+                className="py-3 px-7 rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/30 hover:scale-105 active:scale-95"
             >
                 Register
             </Link>
@@ -232,6 +232,53 @@ const Schedule = () => (
     </section>
 );
 
+const FAQ = () => (
+    <section id="faq" className="my-24 px-6 relative">
+        <div className="max-w-6xl mx-auto text-center">
+            <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
+                FAQ
+            </h2>
+            <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="glass-card p-8 rounded-3xl items-center justify-center mx-auto max-w-xl"
+            >
+                <table className="mx-auto">
+                    <thead>
+                        <tr className="text-center border-b border-slate-500/50 text-lg font-mono text-brand-blue">
+                            <th className="py-2 px-8">Time</th>
+                            <th className="py-2 px-8">Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody className="font-medium text-slate-600">
+                        <tr>
+                            <td className="py-3 px-8 pt-5">12:00 PM</td>
+                            <td className="py-3 px-8 pt-5">
+                                Arrival & Check-In
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="py-3 px-8">12:30 PM</td>
+                            <td className="py-3 px-8">Opening Ceremony</td>
+                        </tr>
+                        <tr>
+                            <td className="py-3 px-8">1:00 PM</td>
+                            <td className="py-3 px-8">Start Hacking!</td>
+                        </tr>
+                        <tr>
+                            <td className="py-3 px-8">5:00 PM</td>
+                            <td className="py-3 px-8">Submission Deadline</td>
+                        </tr>
+                        <tr>
+                            <td className="py-3 px-8">5:30 PM</td>
+                            <td className="py-3 px-8">Awards Ceremony</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </motion.div>
+        </div>
+    </section>
+);
+
 export default function Home() {
     return (
         <main className="min-h-screen">
@@ -239,6 +286,7 @@ export default function Home() {
             <Hero />
             <About />
             <Schedule />
+            <FAQ />
 
             <section className="py-24 text-center">
                 <p className="text-slate-400 text-sm font-mono">
