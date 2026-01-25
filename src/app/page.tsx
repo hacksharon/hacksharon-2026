@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Code2, Users, Trophy } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Code2, Users, Trophy, Plus, Minus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 // --- UI COMPONENTS ---
 
@@ -232,52 +233,106 @@ const Schedule = () => (
     </section>
 );
 
-const FAQ = () => (
-    <section id="faq" className="my-24 px-6 relative">
-        <div className="max-w-6xl mx-auto text-center">
-            <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
-                FAQ
-            </h2>
-            <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="glass-card p-8 rounded-3xl items-center justify-center mx-auto max-w-xl"
+const FAQItem = ({
+    question,
+    answer,
+}: {
+    question: string;
+    answer: string;
+}) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <motion.div
+            initial={false}
+            className="glass-card p-8 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50"
+        >
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex items-center justify-between gap-4 text-left group cursor-pointer"
             >
-                <table className="mx-auto">
-                    <thead>
-                        <tr className="text-center border-b border-slate-500/50 text-lg font-mono text-brand-blue">
-                            <th className="py-2 px-8">Time</th>
-                            <th className="py-2 px-8">Activity</th>
-                        </tr>
-                    </thead>
-                    <tbody className="font-medium text-slate-600">
-                        <tr>
-                            <td className="py-3 px-8 pt-5">12:00 PM</td>
-                            <td className="py-3 px-8 pt-5">
-                                Arrival & Check-In
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="py-3 px-8">12:30 PM</td>
-                            <td className="py-3 px-8">Opening Ceremony</td>
-                        </tr>
-                        <tr>
-                            <td className="py-3 px-8">1:00 PM</td>
-                            <td className="py-3 px-8">Start Hacking!</td>
-                        </tr>
-                        <tr>
-                            <td className="py-3 px-8">5:00 PM</td>
-                            <td className="py-3 px-8">Submission Deadline</td>
-                        </tr>
-                        <tr>
-                            <td className="py-3 px-8">5:30 PM</td>
-                            <td className="py-3 px-8">Awards Ceremony</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </motion.div>
-        </div>
-    </section>
-);
+                <span className="font-bold text-xl text-brand-blue group-hover:text-brand-teal transition-colors">
+                    {question}
+                </span>
+                <span
+                    className={`shrink-0 text-brand-teal transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                >
+                    {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                </span>
+            </button>
+            <AnimatePresence initial={false}>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                        <div className="text-slate-600 text-md leading-relaxed border-t border-slate-100 pt-4">
+                            {answer}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
+};
+
+const FAQ = () => {
+    const questions = [
+        {
+            q: "What is a hackathon?",
+            a: "A hackathon is a social coding event where students collaborate to create a new project from scratch. HackSharon is an afternoon-long hackathon for middle and high school students.",
+        },
+        {
+            q: "How much experience do I need to attend?",
+            a: "None at all! We will have mentors available to help you, whether you're writing your first line of code or are an experienced developer.",
+        },
+        {
+            q: "How do teams work?",
+            a: "You can work in teams of up to 4 students. Alternatively, you can work individually or be randomly assigned to a team with other individuals.",
+        },
+        {
+            q: "When and where is HackSharon?",
+            a: "HackSharon 2026 will be held at Sharon High School on Tuesday, March 24, from 12 PM to 6 PM.",
+        },
+        {
+            q: "Who is eligible to attend?",
+            a: "HackSharon is open to all grade 6–12 students attending either Sharon High School or Sharon Middle School.",
+        },
+        {
+            q: "Does HackSharon cost money?",
+            a: "No! HackSharon is completely free to attend. We provide food, merch, and prizes at no cost to you thanks to our sponsors.",
+        },
+        {
+            q: "What will I eat?",
+            a: "We will be serving free pizza along with plenty of snacks and drinks throughout the event.",
+        },
+        {
+            q: "I have more questions!",
+            a: "Feel free to reach out to us at shshackathon@gmail.com with any other questions you might have.",
+        },
+    ];
+
+    return (
+        <section id="faq" className="my-24 px-6 relative">
+            <div className="max-w-2xl mx-auto">
+                <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-center text-brand-blue">
+                    FAQ
+                </h2>
+                <div className="flex flex-col gap-4">
+                    {questions.map((item, index) => (
+                        <FAQItem
+                            key={index}
+                            question={item.q}
+                            answer={item.a}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default function Home() {
     return (
@@ -289,8 +344,8 @@ export default function Home() {
             <FAQ />
 
             <section className="py-24 text-center">
-                <p className="text-slate-400 text-sm font-mono">
-                    More sections (Schedule, FAQ) coming soon...
+                <p className="text-slate-400 text-lg">
+                    &copy; 2026 HackSharon. All rights reserved.
                 </p>
             </section>
         </main>
