@@ -254,9 +254,6 @@ const Schedule = () => (
                 whileHover={{ scale: 1.02 }}
                 className="glass-card p-8 rounded-3xl items-center justify-center mx-auto max-w-xl"
             >
-                <h3 className="text-2xl text-brand-blue font-bold font-mono mb-6">
-                    Tuesday, March 24
-                </h3>
                 <table className="mx-auto">
                     <thead>
                         <tr className="text-center border-b border-slate-500/50 text-lg font-mono text-brand-blue">
@@ -416,7 +413,7 @@ export default function Home() {
             <FAQ />
 
             <section className="text-center">
-                <p className="text-slate-600 text-lg py-10 mb-0 border-t-black/10 border-t font-mono bg-gray-50">
+                <p className="text-slate-600 text-sm sm:text-lg py-10 mb-0 border-t-black/10 border-t font-mono bg-gray-50">
                     made with ❤️ by the HackSharon team <br></br> (c) 2026
                     HackSharon
                 </p>
