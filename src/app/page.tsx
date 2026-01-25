@@ -136,7 +136,7 @@ const Hero = () => (
 );
 
 const About = () => (
-    <section id="about" className="my-24 px-6 relative">
+    <section id="about" className="my-24 px-6 relative scroll-mt-32">
         <div className="max-w-6xl mx-auto">
             <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-center text-brand-blue">
                 Why <span className="text-brand-teal">HackSharon</span>?
@@ -187,7 +187,7 @@ const About = () => (
 );
 
 const Schedule = () => (
-    <section id="schedule" className="my-24 px-6 relative">
+    <section id="schedule" className="my-24 px-6 relative scroll-mt-32">
         <div className="max-w-6xl mx-auto text-center">
             <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
                 Schedule
@@ -315,7 +315,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section id="faq" className="my-24 px-6 relative">
+        <section id="faq" className="my-24 px-6 relative scroll-mt-32">
             <div className="max-w-2xl mx-auto">
                 <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-center text-brand-blue">
                     FAQ
