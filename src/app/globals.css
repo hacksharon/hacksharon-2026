@@ -31,10 +31,10 @@ body {
     color: var(--foreground);
     background: var(--background);
     /* Technical Grid Pattern */
-    background-image:
+    /* background-image:
         linear-gradient(to right, #e2e8f0 1px, transparent 1px),
         linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 3cqmax 3cqmax; */
 }
 
 /* Glass Utilities */
@@ -46,7 +46,7 @@ body {
 }
 
 .glass-nav {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }

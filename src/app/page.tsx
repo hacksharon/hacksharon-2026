@@ -19,7 +19,7 @@ const Logo = ({ size = "text-xl" }: { size?: string }) => (
 
 const Nav = () => (
     <nav className="fixed top-0 w-full z-50 glass-nav">
-        <div className="max-w-7xl mx-auto px-6 h-16 sm:h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 sm:w-14 sm:h-14">
                     <Image
@@ -30,7 +30,7 @@ const Nav = () => (
                         priority
                     />
                 </div>
-                <Logo size="text-2xl sm:text-4xl md:text-4xl" />
+                <Logo size="text-2xl md:text-4xl" />
             </div>
 
             <div className="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
@@ -67,7 +67,7 @@ const Nav = () => (
             </div>
             <Link
                 href="https://forms.gle/N5n6Pxi755HQ8DzRA"
-                className="py-3 px-7 rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/30 hover:scale-105 active:scale-95"
+                className="py-2 px-6 md:py-2.5 md:px-7 md:text-md rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/30 hover:scale-105 active:scale-95"
             >
                 Register
             </Link>
@@ -84,7 +84,7 @@ const Hero = () => (
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-teal/30 bg-brand-teal/5 text-brand-blue text-xs font-mono mb-8"
             >
                 <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse" />
-                REGISTRATION OPENING SOON
+                REGISTRATION IS OPEN!
             </motion.div>
 
             <motion.div
@@ -93,7 +93,7 @@ const Hero = () => (
                 transition={{ delay: 0.1 }}
                 className="mb-6"
             >
-                <h1 className="font-mono text-5xl sm:text-8xl lg:text-9xl font-bold leading-none tracking-tighter">
+                <h1 className="font-mono text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tighter">
                     <span className="text-brand-teal">HACK</span>
                     <span className="text-brand-blue">SHARON</span>
                 </h1>
@@ -103,20 +103,16 @@ const Hero = () => (
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-md md:text-xl text-slate-600 max-w-lg mx-auto mb-10 leading-relaxed"
+                className="text-2xl sm:text-3xl md:text-4xl text-brand-blue/80 max-w-lg mx-auto mb-10 leading-relaxed font-mono font-bold"
             >
-                An afternoon-long hackathon hosted by students, for{" "}
-                <span className="text-brand-teal font-bold">
-                    grade 6&ndash;12 students
-                </span>{" "}
-                across Massachusetts.
+                MARCH 24, 2026
             </motion.p>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex m-7 flex-col sm:flex-row gap-4 justify-center"
             >
                 <Link
                     href="https://forms.gle/N5n6Pxi755HQ8DzRA"
@@ -196,6 +192,9 @@ const Schedule = () => (
                 whileHover={{ scale: 1.02 }}
                 className="glass-card p-8 rounded-3xl items-center justify-center mx-auto max-w-xl"
             >
+                <h3 className="text-2xl text-brand-blue font-bold font-mono mb-6">
+                    Tuesday, March 24
+                </h3>
                 <table className="mx-auto">
                     <thead>
                         <tr className="text-center border-b border-slate-500/50 text-lg font-mono text-brand-blue">
@@ -334,6 +333,17 @@ const FAQ = () => {
     );
 };
 
+const Sponsors = () => (
+    <section id="sponsors" className="my-24 px-6 relative scroll-mt-32">
+        <div className="max-w-6xl mx-auto text-center">
+            <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
+                Our Partners
+            </h2>
+            {/* Sponsor logos would go here */}
+        </div>
+    </section>
+);
+
 export default function Home() {
     return (
         <main className="min-h-screen">
@@ -343,9 +353,10 @@ export default function Home() {
             <Schedule />
             <FAQ />
 
-            <section className="py-24 text-center">
-                <p className="text-slate-400 text-lg">
-                    &copy; 2026 HackSharon. All rights reserved.
+            <section className="text-center">
+                <p className="text-slate-600 text-lg py-10 mb-0 border-t-black/10 border-t font-mono bg-gray-50">
+                    made with ❤️ by the HackSharon team <br></br> (c) 2026
+                    HackSharon
                 </p>
             </section>
         </main>
