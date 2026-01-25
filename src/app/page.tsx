@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Code2, Users, Trophy, Plus, Minus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // --- UI COMPONENTS ---
 
@@ -75,8 +75,68 @@ const Nav = () => (
     </nav>
 );
 
+const Countdown = () => {
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        // Target: March 24, 2026 at 12:00 PM
+        const targetDate = new Date("2026-03-24T12:00:00").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                });
+            } else {
+                clearInterval(timer);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10"
+        >
+            {[
+                { label: "Days", value: timeLeft.days },
+                { label: "Hours", value: timeLeft.hours },
+                { label: "Minutes", value: timeLeft.minutes },
+                { label: "Seconds", value: timeLeft.seconds },
+            ].map((item) => (
+                <div key={item.label} className="flex flex-col items-center">
+                    <div className="flex items-center justify-center w-18 h-9 sm:w-18 sm:h-9 md:w-24 md:h-12 rounded-2xl">
+                        <span className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold text-brand-blue">
+                            {String(item.value).padStart(2, "0")}
+                        </span>
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-brand-teal mt-2 uppercase font-mono tracking-widest">
+                        {item.label}
+                    </span>
+                </div>
+            ))}
+        </motion.div>
+    );
+};
+
 const Hero = () => (
-    <section className="relative pt-58 pb-20 md:pb-24 px-6 overflow-hidden">
+    <section className="relative pt-58 pb-20 md:pb-20 px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center">
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -103,10 +163,12 @@ const Hero = () => (
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl text-brand-blue/80 max-w-lg mx-auto mb-10 leading-relaxed font-mono font-bold"
+                className="text-2xl sm:text-3xl md:text-4xl text-brand-blue/80 max-w-lg mx-auto mb-2 leading-relaxed font-mono font-bold"
             >
                 MARCH 24, 2026
             </motion.p>
+
+            <Countdown />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
