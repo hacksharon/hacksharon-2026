@@ -398,7 +398,39 @@ const Sponsors = () => (
             <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
                 Our Partners
             </h2>
-            {/* Sponsor logos would go here */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <Link href="https://www.costco.com" className="content-center">
+                    <Image
+                        src="/sponsors/costco.png"
+                        alt="Costco"
+                        width={600}
+                        height={300}
+                        className="object-contain mx-auto p-8"
+                    />
+                </Link>
+                <Link
+                    href="https://www.traderjoes.com/home"
+                    className="content-center"
+                >
+                    <Image
+                        src="/sponsors/trader-joes.png"
+                        alt="Trader Joes"
+                        width={250}
+                        height={250}
+                        className="object-contain mx-auto p-8"
+                    />
+                </Link>
+            </div>
+        </div>
+    </section>
+);
+
+const Resources = () => (
+    <section id="schedule" className="my-24 px-6 relative scroll-mt-32">
+        <div className="max-w-6xl mx-auto text-center">
+            <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
+                Resources
+            </h2>
         </div>
     </section>
 );
@@ -411,6 +443,8 @@ export default function Home() {
             <About />
             <Schedule />
             <FAQ />
+            <Sponsors />
+            <Resources />
 
             <section className="text-center">
                 <p className="text-slate-600 text-sm sm:text-lg py-10 mb-0 border-t-black/10 border-t font-mono bg-gray-50">
