@@ -263,25 +263,25 @@ const Schedule = () => (
                     </thead>
                     <tbody className="font-medium text-slate-600">
                         <tr>
-                            <td className="py-3 px-8 pt-5">12:00 PM</td>
+                            <td className="py-3 px-8 pt-5">11:45 - 12:05 PM</td>
                             <td className="py-3 px-8 pt-5">
                                 Arrival & Check-In
                             </td>
                         </tr>
                         <tr>
-                            <td className="py-3 px-8">12:30 PM</td>
+                            <td className="py-3 px-8">12:05 - 12:30 PM</td>
                             <td className="py-3 px-8">Opening Ceremony</td>
                         </tr>
                         <tr>
-                            <td className="py-3 px-8">1:00 PM</td>
+                            <td className="py-3 px-8">12:30 - 4:00 PM</td>
                             <td className="py-3 px-8">Start Hacking!</td>
                         </tr>
                         <tr>
-                            <td className="py-3 px-8">5:00 PM</td>
-                            <td className="py-3 px-8">Submission Deadline</td>
+                            <td className="py-3 px-8">4:00 - 5:30 PM</td>
+                            <td className="py-3 px-8">Activity, Food, and Judging</td>
                         </tr>
                         <tr>
-                            <td className="py-3 px-8">5:30 PM</td>
+                            <td className="py-3 px-8">5:30 - 6:00 PM</td>
                             <td className="py-3 px-8">Awards Ceremony</td>
                         </tr>
                     </tbody>
