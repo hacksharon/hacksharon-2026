@@ -68,6 +68,7 @@ const Nav = () => (
             <Link
                 href="https://forms.gle/N5n6Pxi755HQ8DzRA"
                 className="py-2 px-6 md:py-2.5 md:px-7 md:text-md rounded-full bg-brand-teal text-white font-semibold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-md shadow-teal-500/30 hover:scale-105 active:scale-95"
+                target="_blank"
             >
                 Register
             </Link>
@@ -179,12 +180,14 @@ const Hero = () => (
                 <Link
                     href="https://forms.gle/N5n6Pxi755HQ8DzRA"
                     className="h-12 px-8 rounded-lg bg-brand-teal text-white font-bold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 hover:-translate-y-1"
+                    target="_blank"
                 >
                     Register Now <ArrowRight size={18} />
                 </Link>
                 <Link
                     href="/sponsors"
                     className="h-12 px-8 rounded-lg border border-slate-200 flex items-center justify-center gap-2 hover:border-brand-teal text-slate-700 hover:text-brand-teal bg-white transition-colors font-medium"
+                    target="_blank"
                 >
                     Sponsor Us
                 </Link>
@@ -278,7 +281,9 @@ const Schedule = () => (
                         </tr>
                         <tr>
                             <td className="py-3 px-8">4:00 - 5:30 PM</td>
-                            <td className="py-3 px-8">Activity, Food, and Judging</td>
+                            <td className="py-3 px-8">
+                                Activity, Food, and Judging
+                            </td>
                         </tr>
                         <tr>
                             <td className="py-3 px-8">5:30 - 6:00 PM</td>
@@ -399,7 +404,11 @@ const Sponsors = () => (
                 Our Partners
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <Link href="https://www.costco.com" className="content-center">
+                <Link
+                    href="https://www.costco.com"
+                    className="content-center"
+                    target="_blank"
+                >
                     <Image
                         src="/sponsors/costco.png"
                         alt="Costco"
@@ -411,6 +420,7 @@ const Sponsors = () => (
                 <Link
                     href="https://www.traderjoes.com/home"
                     className="content-center"
+                    target="_blank"
                 >
                     <Image
                         src="/sponsors/trader-joes.png"
@@ -426,11 +436,66 @@ const Sponsors = () => (
 );
 
 const Resources = () => (
-    <section id="schedule" className="my-24 px-6 relative scroll-mt-32">
-        <div className="max-w-6xl mx-auto text-center">
+    <section id="resources" className="my-24 px-6 relative scroll-mt-32">
+        <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
                 Resources
             </h2>
+            <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
+                <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
+                    General
+                </h3>
+                <Link
+                    href="https://www.freecodecamp.org/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Free Code Camp
+                </Link>
+                <Link
+                    href="https://www.codecademy.com/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Codecademy
+                </Link>
+                <Link
+                    href="https://docs.github.com/en/get-started/start-your-journey"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    GitHub Docs
+                </Link>
+                <Link
+                    href="https://www.w3schools.com/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    W3Schools
+                </Link>
+                <Link
+                    href="https://code.org/en-US/students"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Code.org
+                </Link>
+            </div>
+            <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
+                <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
+                    Web Development
+                </h3>
+            </div>
+            <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
+                <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
+                    Game Development
+                </h3>
+            </div>
+            <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
+                <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
+                    Scratch
+                </h3>
+            </div>
         </div>
     </section>
 );
