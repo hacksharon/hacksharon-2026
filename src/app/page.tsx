@@ -238,8 +238,7 @@ const About = () => (
                     <h3 className="text-xl font-bold text-brand-blue">Win!</h3>
                     <p className="text-slate-600 text-md mt-2">
                         The best projects will earn trophies and other exciting
-                        prizes from our sponsors and organizers, from merch to
-                        tech!
+                        prizes from our sponsors and organizers!
                     </p>
                 </motion.div>
             </div>
