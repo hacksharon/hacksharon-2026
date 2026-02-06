@@ -203,7 +203,7 @@ const About = () => (
                 Why <span className="text-brand-teal">HackSharon</span>?
             </h2>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 max-w-md mx-auto xl:max-w-none">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-md mx-auto lg:max-w-none">
                 <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="glass-card col-span-1 p-8 rounded-3xl"
