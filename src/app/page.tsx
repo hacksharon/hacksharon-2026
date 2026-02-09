@@ -86,7 +86,7 @@ const Countdown = () => {
 
     useEffect(() => {
         // Target: March 24, 2026 at 12:00 PM
-        const targetDate = new Date("2026-03-24T12:00:00").getTime();
+        const targetDate = new Date("2026-03-24T11:45:00").getTime();
 
         const timer = setInterval(() => {
             const now = new Date().getTime();
