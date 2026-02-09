@@ -484,16 +484,100 @@ const Resources = () => (
                 <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
                     Web Development
                 </h3>
+                <Link
+                    href="https://codepen.io/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    CodePen
+                </Link>
+                <Link
+                    href="https://www.htmldog.com/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    HTML Dog
+                </Link>
+                <Link
+                    href="https://developer.mozilla.org/en-US/docs/MDN/Tutorials"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Mozilla Docs
+                </Link>
+                <Link
+                    href="https://docs.expo.dev/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Expo Documentation
+                </Link>
+                <Link
+                    href="https://react.dev/learn/tutorial-tic-tac-toe"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    React Tutorials
+                </Link>
             </div>
             <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
                 <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
                     Game Development
                 </h3>
+                <Link
+                    href="https://www.youtube.com/playlist?list=PLWKjhJtqVAbluXJKKbCIb4xd7fcRkpzoz"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Harvard CS50
+                </Link>
+                <Link
+                    href="https://phaser.io/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Phaser.io
+                </Link>
+                <Link
+                    href="https://libresprite.github.io/#!/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    LibreSprite
+                </Link>
+                <Link
+                    href="https://yurisizov.itch.io/boscaceoil-blue"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Bosca Ceoil Blue
+                </Link>
             </div>
             <div className="glass-card p-8 overflow-hidden rounded-2xl flex flex-col gap-1 mb-8">
                 <h3 className="text-3xl font-bold font-mono text-brand-blue mb-3">
                     Scratch
                 </h3>
+                <Link
+                    href="https://scratch.mit.edu/"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    scratch.mit.edu
+                </Link>
+                <Link
+                    href="https://scratch.mit.edu/starter-projects"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Starter Projects
+                </Link>
+                <Link
+                    href="https://www.scratchfoundation.org/learn/learning-library/getting-started"
+                    className="font-mono text-2xl hover:underline text-slate-600"
+                    target="_blank"
+                >
+                    Scratch Foundation Docs
+                </Link>
             </div>
         </div>
     </section>
