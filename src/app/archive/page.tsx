@@ -1,10 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Code2, Users, Trophy, Plus, Minus } from "lucide-react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 const Hero = () => (
     <section className="relative pt-24 px-6 overflow-hidden">
@@ -37,7 +34,7 @@ const Archive = () => {
                     {years.map((year, index) => (
                         <Link
                             key={index}
-                            href={`/${year}`}
+                            href={`/archive/${year}`}
                             className="col-span-1 group flex w-fit"
                         >
                             <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:bg-brand-blue after:transition-all after:duration-300 group-hover:after:w-full">

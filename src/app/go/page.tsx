@@ -1,10 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Code2, Users, Trophy, Plus, Minus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 const Logo = ({ size = "text-xl" }: { size?: string }) => (
     <div
