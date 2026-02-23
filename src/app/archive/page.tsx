@@ -24,25 +24,48 @@ const Hero = () => (
     </section>
 );
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Archive = () => {
     const years = [2025, 2024];
 
     return (
         <section id="links" className="my-24 px-6 relative scroll-mt-32">
             <div className="max-w-2xl mx-auto text-center content-center space-y-6">
-                <div className="grid grid-cols-4 gap-10 max-w-4xl mx-auto justify-items-center text-3xl font-display font-semibold text-brand-blue">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="grid grid-cols-4 gap-10 max-w-4xl mx-auto justify-items-center text-3xl font-display font-semibold text-brand-blue"
+                >
                     {years.map((year, index) => (
-                        <Link
+                        <motion.div
                             key={index}
-                            href={`/archive/${year}`}
-                            className="col-span-1 group flex w-fit"
+                            variants={itemVariants}
+                            className="col-span-1 flex w-fit"
                         >
-                            <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:bg-brand-blue after:transition-all after:duration-300 group-hover:after:w-full">
-                                {year}
-                            </span>
-                        </Link>
+                            <Link href={`/archive/${year}`} className="group">
+                                <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:bg-brand-blue after:transition-all after:duration-300 group-hover:after:w-full">
+                                    {year}
+                                </span>
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
