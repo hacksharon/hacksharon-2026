@@ -30,7 +30,7 @@ const Nav = () => (
                         priority
                     />
                 </div>
-                <Logo size="text-2xl md:text-4xl" />
+                <Logo size="text-2xl sm:text-4xl" />
             </div>
 
             <div className="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
@@ -175,7 +175,7 @@ const Hero = () => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex m-7 flex-col sm:flex-row gap-4 justify-center"
+                className="flex m-7 flex-col max-w-100 mx-auto sm:flex-row gap-4 justify-center"
             >
                 <Link
                     href="https://forms.gle/N5n6Pxi755HQ8DzRA"
@@ -208,7 +208,7 @@ const About = () => (
                     whileHover={{ scale: 1.02 }}
                     className="glass-card col-span-1 p-8 rounded-3xl"
                 >
-                    <Code2 className="mb-4 text-emerald-500" size={32} />
+                    <Code2 className="mb-4 text-brand-teal" size={32} />
                     <h3 className="text-xl font-bold text-brand-blue">
                         Learn!
                     </h3>
@@ -221,7 +221,7 @@ const About = () => (
                     whileHover={{ scale: 1.02 }}
                     className="glass-card col-span-1 p-8 rounded-3xl"
                 >
-                    <Users className="mb-4 text-emerald-500" size={32} />
+                    <Users className="mb-4 text-brand-teal" size={32} />
                     <h3 className="text-xl font-bold text-brand-blue">
                         Build!
                     </h3>
@@ -234,7 +234,7 @@ const About = () => (
                     whileHover={{ scale: 1.02 }}
                     className="glass-card col-span-1 p-8 rounded-3xl"
                 >
-                    <Trophy className="mb-4 text-emerald-500" size={32} />
+                    <Trophy className="mb-4 text-brand-teal" size={32} />
                     <h3 className="text-xl font-bold text-brand-blue">Win!</h3>
                     <p className="text-slate-600 text-md mt-2">
                         The best projects will earn trophies and other exciting
@@ -583,6 +583,8 @@ const Resources = () => (
     </section>
 );
 
+const Archive = () => <section></section>;
+
 export default function Home() {
     return (
         <main className="min-h-screen">
@@ -594,8 +596,8 @@ export default function Home() {
             <Sponsors />
             <Resources />
 
-            <section className="text-center">
-                <p className="text-slate-600 text-sm sm:text-lg py-10 mb-0 border-t-black/10 border-t font-mono bg-gray-50">
+            <section className="text-center w-full mt-auto">
+                <p className="text-slate-600 text-sm sm:text-lg py-10 mb-0 border-t border-black/10 font-mono bg-gray-50">
                     made with ❤️ by the HackSharon team <br></br> (c) 2026
                     HackSharon
                 </p>

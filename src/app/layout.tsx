@@ -15,7 +15,7 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
     title: "HackSharon 2026",
-    description: "Build the future.",
+    description: "A beginner-friendly hackathon open to all Sharon students.",
 };
 
 export default function RootLayout({
