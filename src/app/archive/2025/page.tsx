@@ -1,6 +1,6 @@
 "use client";
 
-import { List } from "lucide-react";
+import { Trophy, Medal, Award } from "lucide-react";
 import Image from "next/image";
 
 const Logo = ({ size = "text-xl" }: { size?: string }) => (
@@ -33,52 +33,113 @@ const Header = () => (
 );
 
 const Body = () => {
+    const winners = [
+        {
+            rank: "1st Place",
+            team: "Code",
+            members: [
+                "Ronak Jain",
+                "Ishaan Gandhi Jaiswal",
+                "Vrinda Pardeshi",
+                "Pranav Pardeshi",
+            ],
+            color: "text-yellow-500",
+            bg: "bg-yellow-500/10 border-yellow-500/20",
+        },
+        {
+            rank: "2nd Place",
+            team: "MZNL",
+            members: ["Maya Zaretsky", "Nathalie Li"],
+            color: "text-slate-400",
+            bg: "bg-slate-400/10 border-slate-400/20",
+        },
+        {
+            rank: "3rd Place",
+            team: "Is It Recyclable",
+            members: ["Arnav Garg", "Aungshul Saha", "Mihir Shetty"],
+            color: "text-amber-700",
+            bg: "bg-amber-700/10 border-amber-700/20",
+        },
+        {
+            rank: "Honorable Mention",
+            team: "The Cybercoders",
+            members: [
+                "Anika Yarlagadda",
+                "Kinzom Jaiswal",
+                "Bennet James",
+                "Saanvi Malani",
+            ],
+            color: "text-slate-700",
+            bg: "bg-purple-500/10 border-purple-500/20",
+        },
+        {
+            rank: "Honorable Mention",
+            team: "RRC",
+            members: ["Rishab Kini", "Carlos Aguilar", "Ruhan Sah"],
+            color: "text-slate-700",
+            bg: "bg-purple-500/10 border-purple-500/20",
+        },
+    ];
+
     return (
         <section id="body" className="my-24 px-6 relative scroll-mt-32">
-            <div className="max-w-6xl mx-auto text-center content-center space-y-6">
-                <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue tracking-tight">
-                    Theme: Climate Change
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
-                    <div className="col-span-1">
-                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
-                            1st Place
-                        </h3>
-                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
-                            Code
+            <div className="max-w-4xl mx-auto space-y-12">
+                <div className="text-center">
+                    <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-4 text-brand-blue tracking-tight">
+                        Theme: Climate Change
+                    </h2>
+                    <p className="text-slate-600 text-2xl font-display">
+                        HackSharon 2025 Winning Teams
+                    </p>
+                </div>
+
+                <div className="flex flex-col gap-6 w-full">
+                    {winners.map((winner, index) => (
+                        <div
+                            key={index}
+                            className={`glass-card p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-transform hover:scale-[1.01] ${winner.bg}`}
+                        >
+                            <div className="flex-1 min-w-0 w-full">
+                                <div className="flex items-center gap-2 mb-2">
+                                    {index === 0 ? (
+                                        <Trophy
+                                            className={winner.color}
+                                            size={24}
+                                        />
+                                    ) : index === 1 || index === 2 ? (
+                                        <Medal
+                                            className={winner.color}
+                                            size={24}
+                                        />
+                                    ) : (
+                                        <Award
+                                            className={winner.color}
+                                            size={24}
+                                        />
+                                    )}
+                                    <h3
+                                        className={`font-mono text-xl sm:text-2xl font-bold ${winner.color}`}
+                                    >
+                                        {winner.rank}
+                                    </h3>
+                                </div>
+                                <div className="font-mono text-4xl sm:text-5xl text-brand-teal font-bold wrap-break-word leading-tight">
+                                    {winner.team}
+                                </div>
+                            </div>
+
+                            <div className="md:text-right w-full md:w-auto md:min-w-50">
+                                <h4 className="text-sm uppercase tracking-wider text-slate-500 font-bold mb-2">
+                                    Team Members
+                                </h4>
+                                <ul className="text-lg sm:text-xl text-slate-700 space-y-1">
+                                    {winner.members.map((member, mIndex) => (
+                                        <li key={mIndex}>{member}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                        <div className="text-1xl sm:text-2xl text-slate-700">
-                            Ronak Jain <br />
-                            Ishaan Gandhi Jaiswal <br />
-                            Vrinda Pardeshi <br />
-                            Pranav Pardeshi
-                        </div>
-                    </div>
-                    <div className="col-span-1">
-                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
-                            2nd Place
-                        </h3>
-                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
-                            MZNL
-                        </div>
-                        <div className="text-1xl sm:text-2xl text-slate-700">
-                            Maya Zaretsky <br />
-                            Nathalie Li
-                        </div>
-                    </div>
-                    <div className="col-span-1">
-                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
-                            3rd Place
-                        </h3>
-                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
-                            Is It Recyclable
-                        </div>
-                        <div className="text-1xl sm:text-2xl text-slate-700">
-                            Arnav Garg <br />
-                            Aungshul Saha <br />
-                            Mihir Shetty
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
