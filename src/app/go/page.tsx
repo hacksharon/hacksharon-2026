@@ -61,8 +61,9 @@ const Links = () => {
                     Quick Links
                 </h2>
                 <div className="flex flex-col gap-4">
-                    {links.map((item) => (
+                    {links.map((item, index) => (
                         <Link
+                            key={index}
                             href={item.href}
                             className="w-xl mx-auto glass-card p-6 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50 cursor-pointer font-bold text-xl text-brand-blue hover:text-brand-teal transition-colors"
                         >
