@@ -1,7 +1,7 @@
 "use client";
 
+import { List } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const Logo = ({ size = "text-xl" }: { size?: string }) => (
     <div
@@ -13,7 +13,7 @@ const Logo = ({ size = "text-xl" }: { size?: string }) => (
     </div>
 );
 
-const Nav = () => (
+const Header = () => (
     <nav className="fixed top-0 w-full z-50 glass-nav">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -32,42 +32,53 @@ const Nav = () => (
     </nav>
 );
 
-const Links = () => {
-    const links = [
-        {
-            href: "",
-            name: "Opening Ceremony",
-        },
-        {
-            href: "",
-            name: "Example Projects",
-        },
-        {
-            href: "",
-            name: "Done Early?",
-        },
-        {
-            href: "",
-            name: "Submission Guidelines",
-        },
-    ];
-
+const Body = () => {
     return (
-        <section id="links" className="my-24 px-6 relative scroll-mt-32">
-            <div className="max-w-2xl mx-auto text-center content-center space-y-6">
+        <section id="body" className="my-24 px-6 relative scroll-mt-32">
+            <div className="max-w-6xl mx-auto text-center content-center space-y-6">
                 <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue tracking-tight">
                     Theme: Climate Change
                 </h2>
-                <div className="flex flex-col gap-4">
-                    {links.map((item, index) => (
-                        <Link
-                            key={index}
-                            href={item.href}
-                            className="w-xl mx-auto glass-card p-6 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50 cursor-pointer font-bold text-xl text-brand-blue hover:text-brand-teal transition-colors"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+                    <div className="col-span-1">
+                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
+                            1st Place
+                        </h3>
+                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
+                            Code
+                        </div>
+                        <div className="text-1xl sm:text-2xl text-slate-700">
+                            Ronak Jain <br />
+                            Ishaan Gandhi Jaiswal <br />
+                            Vrinda Pardeshi <br />
+                            Pranav Pardeshi
+                        </div>
+                    </div>
+                    <div className="col-span-1">
+                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
+                            2nd Place
+                        </h3>
+                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
+                            MZNL
+                        </div>
+                        <div className="text-1xl sm:text-2xl text-slate-700">
+                            Maya Zaretsky <br />
+                            Nathalie Li
+                        </div>
+                    </div>
+                    <div className="col-span-1">
+                        <h3 className="font-mono text-2xl sm:text-3xl text-brand-blue font-bold mb-3">
+                            3rd Place
+                        </h3>
+                        <div className="font-mono text-5xl sm:text-6xl text-brand-teal font-bold mb-3">
+                            Is It Recyclable
+                        </div>
+                        <div className="text-1xl sm:text-2xl text-slate-700">
+                            Arnav Garg <br />
+                            Aungshul Saha <br />
+                            Mihir Shetty
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -77,10 +88,10 @@ const Links = () => {
 export default function Home() {
     return (
         <main className="min-h-screen flex flex-col">
-            <Nav />
+            <Header />
 
             <div className="flex-1 pt-12">
-                <Links />
+                <Body />
             </div>
 
             <section className="text-center w-full mt-auto">

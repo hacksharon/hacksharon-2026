@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,43 +32,62 @@ const Nav = () => (
     </nav>
 );
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Links = () => {
     const links = [
-        {
-            href: "",
-            name: "Opening Ceremony",
-        },
-        {
-            href: "",
-            name: "Example Projects",
-        },
-        {
-            href: "",
-            name: "Done Early?",
-        },
-        {
-            href: "",
-            name: "Submission Guidelines",
-        },
+        { href: "", name: "Opening Ceremony" },
+        { href: "", name: "Example Projects" },
+        { href: "", name: "Done Early?" },
+        { href: "", name: "Submission Guidelines" },
     ];
 
     return (
         <section id="links" className="my-24 px-6 relative scroll-mt-32">
             <div className="max-w-2xl mx-auto text-center content-center space-y-6">
-                <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
-                    Quick Links
-                </h2>
-                <div className="flex flex-col gap-4">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="flex flex-col items-center gap-4"
+                >
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="font-mono text-3xl sm:text-5xl font-bold mb-8 text-brand-blue"
+                    >
+                        Quick Links
+                    </motion.h2>
+
                     {links.map((item, index) => (
-                        <Link
+                        <motion.div
                             key={index}
-                            href={item.href}
-                            className="w-xl mx-auto glass-card p-6 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50 cursor-pointer font-bold text-xl text-brand-blue hover:text-brand-teal transition-colors"
+                            variants={itemVariants}
+                            className="w-full"
                         >
-                            {item.name}
-                        </Link>
+                            <Link
+                                href={item.href}
+                                className="block w-full max-w-xl mx-auto glass-card p-6 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50 cursor-pointer font-bold text-xl text-brand-blue hover:text-brand-teal transition-colors"
+                            >
+                                {item.name}
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
