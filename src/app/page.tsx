@@ -593,7 +593,7 @@ const ArchiveButton = () => (
                 className="object-contain p-1.5 group-hover:-rotate-12 transition-transform duration-300"
             />
         </div>
-        <span className="font-mono font-bold text-brand-blue tracking-widest text-sm sm:text-base group-hover:text-brand-teal transition-colors">
+        <span className="font-mono font-bold text-brand-blue tracking-wider text-sm sm:text-base group-hover:text-brand-teal transition-colors">
             ARCHIVE
         </span>
     </Link>
