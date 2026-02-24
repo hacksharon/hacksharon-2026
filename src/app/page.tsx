@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-// --- UI COMPONENTS ---
-
 const Logo = ({ size = "text-xl" }: { size?: string }) => (
     <div
         className={`${size} font-mono font-bold tracking-tighter leading-none`}
@@ -85,7 +83,6 @@ const Countdown = () => {
     });
 
     useEffect(() => {
-        // Target: March 24, 2026 at 12:00 PM
         const targetDate = new Date("2026-03-24T11:45:00").getTime();
 
         const timer = setInterval(() => {
@@ -583,7 +580,24 @@ const Resources = () => (
     </section>
 );
 
-const Archive = () => <section></section>;
+const ArchiveButton = () => (
+    <Link
+        href="/archive"
+        className="fixed bottom-6 right-6 sm:bottom-10 sm:right-10 z-50 glass-card flex items-center gap-3 p-2 pr-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group border border-brand-teal/20"
+    >
+        <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full p-2 shadow-sm">
+            <Image
+                src="/brandmark.png"
+                alt="Archive"
+                fill
+                className="object-contain p-1.5 group-hover:-rotate-12 transition-transform duration-300"
+            />
+        </div>
+        <span className="font-mono font-bold text-brand-blue tracking-widest text-sm sm:text-base group-hover:text-brand-teal transition-colors">
+            ARCHIVE
+        </span>
+    </Link>
+);
 
 export default function Home() {
     return (
@@ -595,6 +609,7 @@ export default function Home() {
             <FAQ />
             <Sponsors />
             <Resources />
+            <ArchiveButton />
 
             <section className="text-center w-full mt-auto">
                 <p className="text-slate-600 text-sm sm:text-lg py-10 mb-0 border-t border-black/10 font-mono bg-gray-50">

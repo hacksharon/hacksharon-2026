@@ -52,13 +52,29 @@ const Archive = () => {
                     animate="show"
                     className="grid grid-cols-4 gap-10 max-w-4xl mx-auto justify-items-center text-3xl font-display font-semibold text-brand-blue"
                 >
+                    <motion.div
+                        variants={itemVariants}
+                        className="col-span-1 flex w-fit"
+                    >
+                        <Link
+                            href="/"
+                            className="group bg-brand-blue py-4 px-6 text-white rounded-2xl"
+                        >
+                            <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:bg-white after:transition-all after:duration-300 group-hover:after:w-full">
+                                Current
+                            </span>
+                        </Link>
+                    </motion.div>
                     {years.map((year, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
                             className="col-span-1 flex w-fit"
                         >
-                            <Link href={`/archive/${year}`} className="group">
+                            <Link
+                                href={`/archive/${year}`}
+                                className="group p-4"
+                            >
                                 <span className="relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-0 after:bg-brand-blue after:transition-all after:duration-300 group-hover:after:w-full">
                                     {year}
                                 </span>
