@@ -172,7 +172,7 @@ const Hero = () => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex m-7 flex-col max-w-100 mx-auto sm:flex-row gap-4 justify-center"
+                className="max-w-60 mx-auto justify-center"
             >
                 <Link
                     href="https://forms.gle/N5n6Pxi755HQ8DzRA"
@@ -180,13 +180,6 @@ const Hero = () => (
                     target="_blank"
                 >
                     Register Now <ArrowRight size={18} />
-                </Link>
-                <Link
-                    href="/sponsors"
-                    className="h-12 px-8 rounded-lg border border-slate-200 flex items-center justify-center gap-2 hover:border-brand-teal text-slate-700 hover:text-brand-teal bg-white transition-colors font-medium"
-                    target="_blank"
-                >
-                    Sponsor Us
                 </Link>
             </motion.div>
         </div>
