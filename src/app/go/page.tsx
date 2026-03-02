@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Logo = ({ size = "text-xl" }: { size?: string }) => (
     <div
@@ -32,6 +33,67 @@ const Nav = () => (
     </nav>
 );
 
+const Countdown = () => {
+    const [timeLeft, setTimeLeft] = useState({
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        const targetDate = new Date("2026-03-24T16:00:00").getTime();
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                });
+            } else {
+                clearInterval(timer);
+                setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <section>
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
+                className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 glass-card p-10 max-w-xl mx-auto rounded-2xl"
+            >
+                {[
+                    { label: "Hours", value: timeLeft.hours },
+                    { label: "Minutes", value: timeLeft.minutes },
+                    { label: "Seconds", value: timeLeft.seconds },
+                ].map((item) => (
+                    <div
+                        key={item.label}
+                        className="flex flex-col items-center"
+                    >
+                        <div className="flex items-center justify-center w-18 h-9 sm:w-18 sm:h-9 md:w-24 md:h-12 rounded-2xl">
+                            <span className="font-mono text-2xl sm:text-3xl md:text-4xl font-bold text-brand-blue">
+                                {String(item.value).padStart(2, "0")}
+                            </span>
+                        </div>
+                        <span className="text-xs sm:text-sm font-bold text-brand-teal mt-2 uppercase font-mono tracking-widest">
+                            {item.label}
+                        </span>
+                    </div>
+                ))}
+            </motion.div>
+        </section>
+    );
+};
+
 const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -56,7 +118,7 @@ const Links = () => {
     ];
 
     return (
-        <section id="links" className="my-24 px-6 relative scroll-mt-32">
+        <section id="links" className="my-20 px-6 relative scroll-mt-32">
             <div className="max-w-2xl mx-auto text-center content-center space-y-6">
                 <motion.div
                     variants={containerVariants}
@@ -98,7 +160,8 @@ export default function Home() {
         <main className="min-h-screen flex flex-col">
             <Nav />
 
-            <div className="flex-1 pt-12">
+            <div className="flex-1 pt-36">
+                <Countdown />
                 <Links />
             </div>
 
