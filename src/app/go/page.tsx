@@ -111,10 +111,26 @@ const itemVariants = {
 
 const Links = () => {
     const links = [
-        { href: "", name: "Opening Ceremony" },
-        { href: "", name: "Example Projects" },
-        { href: "", name: "Done Early?" },
-        { href: "", name: "Submission Guidelines" },
+        {
+            href: "https://docs.google.com/presentation/d/1X9hJaRfAlpSTGpYleDJZlrT57WJXZMqLOrFyo565rXI/edit?usp=sharing",
+            name: "Scratch Workshop",
+        },
+        {
+            href: "https://docs.google.com/document/d/1NPmzoyoBm2CM8a9TIZI739GXTnNDBgrCLKxOG0fDu24/edit?usp=sharing",
+            name: "Done Early?",
+        },
+        {
+            href: "https://docs.google.com/presentation/d/1nlsooeK3z3J6DPyLEgatEinUvGxJ2TDhnXSIJfM-kWQ/edit?usp=sharing",
+            name: "Presentation Template",
+        },
+        {
+            href: "https://docs.google.com/forms/d/e/1FAIpQLSeCDej_CQt0m2NXVZ1vEO_RS5PSHqRJ8N4JEiXZp9grUc5Tnw/viewform?usp=header",
+            name: "Project Submission Form",
+        },
+        {
+            href: "https://docs.google.com/forms/d/e/1FAIpQLSdvIgP3UixXRTO2nAMQuFu1LYIN3-cDzfJWccz11HTv_lMz0g/viewform?usp=dialog",
+            name: "Feedback Form",
+        },
     ];
 
     return (
@@ -143,6 +159,7 @@ const Links = () => {
                         >
                             <Link
                                 href={item.href}
+                                target="_blank"
                                 className="block w-full max-w-xl mx-auto glass-card p-6 overflow-hidden rounded-2xl border border-slate-200/50 bg-white/50 cursor-pointer font-bold text-xl text-brand-blue hover:text-brand-teal transition-colors"
                             >
                                 {item.name}
@@ -150,6 +167,23 @@ const Links = () => {
                         </motion.div>
                     ))}
                 </motion.div>
+            </div>
+        </section>
+    );
+};
+
+const Wifi = () => {
+    return (
+        <section id="wifi" className="my-20 px-6 relative scroll-mt-32">
+            <div className="max-w-6xl mx-auto text-center">
+                <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
+                    Wi-Fi
+                </h2>
+                <div className="font-mono text-2xl sm:text-3xl text-slate-700 leading-normal">
+                    Network: <span className="font-semibold">SHSGUEST</span>
+                    <br />
+                    Password: <span className="font-semibold">Summer22</span>
+                </div>
             </div>
         </section>
     );
@@ -163,6 +197,7 @@ export default function Home() {
             <div className="flex-1 pt-36">
                 <Countdown />
                 <Links />
+                <Wifi />
             </div>
 
             <section className="text-center w-full mt-auto">
