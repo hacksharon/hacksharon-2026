@@ -601,17 +601,6 @@ const Judges = () => (
             <div className="grid grid-cols-1 gap-8 mx-auto">
                 <div className="glass-card p-8 overflow-hidden rounded-2xl">
                     <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
-                        Daniela Yablon
-                    </div>
-                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
-                        <div className="font-semibold">
-                            Princeton University
-                        </div>
-                        Electrical & Computer Engineering
-                    </div>
-                </div>
-                <div className="glass-card p-8 overflow-hidden rounded-2xl">
-                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
                         Apurva Varigonda
                     </div>
                     <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
