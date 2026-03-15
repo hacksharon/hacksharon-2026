@@ -419,6 +419,19 @@ const Sponsors = () => (
                         className="object-contain mx-auto p-8"
                     />
                 </Link>
+                <Link
+                    href="https://www.shaws.com/"
+                    className="content-center"
+                    target="_blank"
+                >
+                    <Image
+                        src="/sponsors/shaws.png"
+                        alt="Shaws"
+                        width={250}
+                        height={250}
+                        className="object-contain mx-auto p-8"
+                    />
+                </Link>
             </div>
         </div>
     </section>
