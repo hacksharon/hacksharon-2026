@@ -62,6 +62,12 @@ const Nav = () => (
                 >
                     Resources
                 </Link>
+                <Link
+                    href="#judges"
+                    className="hover:text-brand-teal transition-colors"
+                >
+                    Judges
+                </Link>
             </div>
             <Link
                 href="https://forms.gle/N5n6Pxi755HQ8DzRA"
@@ -407,19 +413,6 @@ const Sponsors = () => (
                     />
                 </Link>
                 <Link
-                    href="https://www.traderjoes.com/home"
-                    className="content-center"
-                    target="_blank"
-                >
-                    <Image
-                        src="/sponsors/trader-joes.png"
-                        alt="Trader Joes"
-                        width={250}
-                        height={250}
-                        className="object-contain mx-auto p-8"
-                    />
-                </Link>
-                <Link
                     href="https://www.shaws.com/"
                     className="content-center"
                     target="_blank"
@@ -428,6 +421,19 @@ const Sponsors = () => (
                         src="/sponsors/shaws.png"
                         alt="Shaws"
                         width={400}
+                        height={250}
+                        className="object-contain mx-auto p-8"
+                    />
+                </Link>
+                <Link
+                    href="https://www.bigy.com/"
+                    className="content-center"
+                    target="_blank"
+                >
+                    <Image
+                        src="/sponsors/big-y.png"
+                        alt="Big Y"
+                        width={250}
                         height={250}
                         className="object-contain mx-auto p-8"
                     />
@@ -586,6 +592,71 @@ const Resources = () => (
     </section>
 );
 
+const Judges = () => (
+    <section id="judges" className="my-24 px-6 relative scroll-mt-32">
+        <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-mono text-3xl sm:text-5xl font-bold mb-12 text-brand-blue">
+                Judges
+            </h2>
+            <div className="grid grid-cols-1 gap-8 mx-auto">
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Daniela Yablon
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">
+                            Princeton University
+                        </div>
+                        Electrical & Computer Engineering
+                    </div>
+                </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Apurva Varigonda
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">
+                            Massachusetts Institute of Technology
+                        </div>
+                        Mathematics & CS/CogSci
+                    </div>
+                </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Hannah Li
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">
+                            Northeastern University
+                        </div>
+                        Economics & Business Administration
+                    </div>
+                </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Maksim Straus
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">
+                            Rochester Institute of Technology
+                        </div>
+                        Computer Science
+                    </div>
+                </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Suresh Sivananthan
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">Dell Technologies</div>
+                        Identity & Access Management Consultant
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+);
+
 const ArchiveButton = () => (
     <Link
         href="/archive"
@@ -615,6 +686,7 @@ export default function Home() {
             <FAQ />
             <Sponsors />
             <Resources />
+            <Judges />
             <ArchiveButton />
 
             <section className="text-center w-full mt-auto">
