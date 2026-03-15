@@ -427,7 +427,7 @@ const Sponsors = () => (
                     <Image
                         src="/sponsors/shaws.png"
                         alt="Shaws"
-                        width={250}
+                        width={400}
                         height={250}
                         className="object-contain mx-auto p-8"
                     />
