@@ -112,6 +112,10 @@ const itemVariants = {
 const Links = () => {
     const links = [
         {
+            href: "https://docs.google.com/presentation/d/1DTqTP72pzm8sU0Q2_CSKENuadpWT7xIbFGv9afqGRA0/edit?usp=sharing",
+            name: "Opening Ceremony",
+        },
+        {
             href: "https://docs.google.com/presentation/d/1X9hJaRfAlpSTGpYleDJZlrT57WJXZMqLOrFyo565rXI/edit?usp=sharing",
             name: "Scratch Workshop",
         },
@@ -124,8 +128,20 @@ const Links = () => {
             name: "Presentation Template",
         },
         {
+            href: "https://docs.google.com/presentation/d/1qVMuXCxmAI2ZzWBy8LjyGO-UUbbPNN-kppPe2gbeejA/edit?usp=sharing",
+            name: "How to Present",
+        },
+        {
+            href: "https://github.com/avarigonda24/Urban-Climate-Resiliency",
+            name: "Example Project",
+        },
+        {
             href: "https://docs.google.com/forms/d/e/1FAIpQLSeCDej_CQt0m2NXVZ1vEO_RS5PSHqRJ8N4JEiXZp9grUc5Tnw/viewform?usp=header",
             name: "Project Submission Form",
+        },
+        {
+            href: "https://docs.google.com/document/d/1220NWUK7rug37CxZez9W1tYHZoBdkBEqFOs4-szhxd0/edit?usp=sharing",
+            name: "Scoring Rubric",
         },
         {
             href: "https://docs.google.com/forms/d/e/1FAIpQLSdvIgP3UixXRTO2nAMQuFu1LYIN3-cDzfJWccz11HTv_lMz0g/viewform?usp=dialog",
