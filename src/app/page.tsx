@@ -641,6 +641,24 @@ const Judges = () => (
                         Identity & Access Management Consultant
                     </div>
                 </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Marla Windman
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">MEDITECH</div>
+                        Programming Analyst
+                    </div>
+                </div>
+                <div className="glass-card p-8 overflow-hidden rounded-2xl">
+                    <div className="font-mono text-2xl sm:text-3xl font-bold text-brand-blue pb-4">
+                        Robin Li
+                    </div>
+                    <div className="font-display text-1xl sm:text-2xl text-slate-500 leading-relaxed">
+                        <div className="font-semibold">Newco Coffee</div>
+                        Director of Electrical Engineering
+                    </div>
+                </div>
             </div>
         </div>
     </section>
