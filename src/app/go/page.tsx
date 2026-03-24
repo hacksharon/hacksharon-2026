@@ -116,6 +116,10 @@ const Links = () => {
             name: "Opening Ceremony",
         },
         {
+            href: "https://docs.google.com/document/d/1_f9qaMmskwK-hTm0Di3tUzUMn8Qy_Ho1iRZ2ZVDtQGg/edit?usp=sharing",
+            name: "Intro to JDoodle",
+        },
+        {
             href: "https://docs.google.com/presentation/d/1X9hJaRfAlpSTGpYleDJZlrT57WJXZMqLOrFyo565rXI/edit?usp=sharing",
             name: "Scratch Workshop",
         },
