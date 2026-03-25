@@ -140,7 +140,7 @@ const Countdown = () => {
 };
 
 const Hero = () => (
-    <section className="relative pt-58 px-6 overflow-hidden">
+    <section className="relative pt-58 pb-20 md:pb-20 px-6 overflow-hidden">
         <div className="max-w-5xl mx-auto text-center">
             <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -167,22 +167,27 @@ const Hero = () => (
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-2xl sm:text-3xl md:text-4xl text-brand-blue/80 max-w-lg mx-auto mb-4 leading-relaxed font-mono font-bold"
+                className="text-2xl sm:text-3xl md:text-4xl text-brand-blue/80 max-w-lg mx-auto mb-2 leading-relaxed font-mono font-bold"
             >
                 MARCH 24, 2026
             </motion.p>
 
-            <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+            <Countdown />
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl sm:text-2xl text-slate-600 max-w-lg md:max-w-3xl mx-auto mb-2 leading-relaxed font-display"
+                className="max-w-60 mx-auto justify-center"
             >
-                Thanks for coming! Congratulations to all of our HackSharon 2026
-                hackers, especially to those new to programming! Everyone did an
-                amazing job, and we look forward to welcoming you back next year
-                for HackSharon 2027.
-            </motion.p>
+                <Link
+                    href="https://forms.gle/N5n6Pxi755HQ8DzRA"
+                    className="h-12 px-8 rounded-lg bg-brand-teal text-white font-bold flex items-center justify-center gap-2 hover:bg-brand-teal-hover transition-all shadow-lg shadow-teal-500/30 hover:shadow-teal-500/40 hover:-translate-y-1"
+                    target="_blank"
+                >
+                    Register Now <ArrowRight size={18} />
+                </Link>
+            </motion.div>
         </div>
     </section>
 );

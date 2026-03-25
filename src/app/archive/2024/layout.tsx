@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "HackSharon 2024",
+    title: "HackSharon Archive | 2024",
     description: "A beginner-friendly hackathon open to all Sharon students.",
 };
 

@@ -41,7 +41,7 @@ const itemVariants = {
 };
 
 const Archive = () => {
-    const years = [2025, 2024];
+    const years = [2026, 2025, 2024];
 
     return (
         <section id="links" className="my-24 px-6 relative scroll-mt-32">
